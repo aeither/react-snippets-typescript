@@ -1,4 +1,6 @@
-# Simple React Snippets
+# Simple React Snippets for Typescript
+
+- Simple React Snippets Extension customized to my daily uses.
 
 The essential collection of React Snippets and commands.
 
@@ -19,31 +21,22 @@ that work the way that you would expect, not just a copy of the documentation.
 | Snippet | Renders                                       |
 | ------- | --------------------------------------------- |
 | `imr`   | Import React                                  |
-| `imrc`  | Import React / Component                      |
+| `imem`  | Import External Module                        |
 | `imrd`  | Import ReactDOM                               |
-| `imrs`  | Import React / useState                       |
-| `imrse` | Import React / useState useEffect             |
+| `ims`   | Import useState                               |
+| `imrse` | Import useState useEffect                     |
 | `impt`  | Import PropTypes                              |
-| `impc`  | Import React / PureComponent                  |
-| `cc`    | Class Component                               |
-| `ccc`   | Class Component With Constructor              |
-| `cpc`   | Class Pure Component                          |
-| `ffc`   | Function Component                            |
-| `sfc`   | Stateless Function Component (Arrow function) |
-| `cdm`   | componentDidMount                             |
-| `uef`   | useEffect Hook                                |
-| `cwm`   | componentWillMount                            |
-| `cwrp`  | componentWillReceiveProps                     |
+| `use`   | useEffect Hook                                |
+| `uss`   | Declare a new state variable using State Hook |
+| `usx`   | Declare a new state variable using X Hook     |
+| `clg`   | Console Log                                   |
+| `clo`   | Console Log Object                            |
+| `nfn`   | Named function                                |
+| `anfn`  | Async Named function                         |
+| `fc`    | Function Component                            |
+| `ffc`   | Function Syntax Component                     |
 | `gds`   | getDerivedStateFromProps                      |
-| `scu`   | shouldComponentUpdate                         |
-| `cwu`   | componentWillUpdate                           |
-| `cdu`   | componentDidUpdate                            |
-| `cwun`  | componentWillUnmount                          |
-| `cdc`   | componentDidCatch                             |
 | `gsbu`  | getSnapshotBeforeUpdate                       |
-| `ss`    | setState                                      |
-| `ssf`   | Functional setState                           |
-| `usf`   | Declare a new state variable using State Hook |
 | `ren`   | render                                        |
 | `rprop` | Render Prop                                   |
 | `hoc`   | Higher Order Component                        |

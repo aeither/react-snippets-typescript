@@ -5,13 +5,10 @@
     "description": "Import React"
   },
 
-  "Import React and Component": {
-    "prefix": "imrc",
-    "body": [
-      "import * as React from 'react';",
-      "import { Component } from 'react';\n"
-    ],
-    "description": "Import React, { Component }"
+  "Import External Module": {
+    "prefix": "imem",
+    "body": ["import { $2 } from '$1';\n"],
+    "description": "Import External Module"
   },
 
   "Import ReactDOM": {
@@ -21,99 +18,57 @@
   },
 
   "Import React, { useState }": {
-    "prefix": "imrs",
-    "body": [
-      "import * as React from 'react';",
-      "import { useState } from 'react';\n"
-    ],
-    "description": "Import React, { useState }"
+    "prefix": "ims",
+    "body": ["import { useState } from 'react';\n"],
+    "description": "Import { useState }"
   },
 
-  "Import React, { useState, useEffect }": {
-    "prefix": "imrse",
-    "body": [
-      "import * as React from 'react';",
-      "import { useState, useEffect } from 'react';\n"
-    ],
-    "description": "Import React, { useState, useEffect }"
+  "Import { useState, useEffect }": {
+    "prefix": "imse",
+    "body": ["import { useState, useEffect } from 'react';\n"],
+    "description": "Import { useState, useEffect }"
   },
 
-  "Import Pure Component": {
-    "prefix": "impc",
-    "body": ["import React, { PureComponent } from 'react';\n"],
-    "description": "Import React, { PureComponent }"
+  "useEffect": {
+    "prefix": "use",
+    "body": ["useEffect(() => {", "\t$1", "}, [$2]);"],
+    "description": "useEffect Hook"
   },
 
-  "Class Component": {
-    "prefix": "cc",
-    "body": [
-      "interface $1Props {",
-      "\t$2",
-      "}",
-      " ",
-      "interface $1State {",
-      "\t$3",
-      "}",
-      " ",
-      "class $1 extends React.Component<$1Props, $1State> {",
-      "\tstate = { $4: $5 }",
-      "\trender() { ",
-      "\t\treturn ( $0 );",
-      "\t}",
-      "}",
-      " ",
-      "export default $1;"
-    ],
-    "description": "Class Component"
+  "UseState": {
+    "prefix": "uss",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
+    "description": "Declare a new state Variable using the State Hook. Hit Tab to apply CamelCase to function"
   },
 
-  "Class Pure Component": {
-    "prefix": "cpc",
-    "body": [
-      "export interface $1Props {",
-      "\t$2",
-      "}",
-      " ",
-      "export interface $1State {",
-      "\t$3",
-      "}",
-      " ",
-      "class $1 extends React.PureComponent<$1Props, $1State> {",
-      "\tstate = { $4: $5 }",
-      "\trender() { ",
-      "\t\treturn ( $0 );",
-      "\t}",
-      "}",
-      " ",
-      "export default $1;"
-    ],
-    "description": "Class Pure Component"
+  "UseHook": {
+    "prefix": "usx",
+    "body": ["const { $3 } = $1($2);"],
+    "description": "Declare a new state variable using X Hook"
   },
 
-  "Class Component Constructor": {
-    "prefix": "ccc",
-    "body": [
-      "interface $1Props {",
-      "\t$2",
-      "}",
-      " ",
-      "interface $1State {",
-      "\t$3",
-      "}",
-      " ",
-      "class $1 extends React.Component<$1Props, $1State> {",
-      "\tconstructor(props: $1Props) {",
-      "\t\tsuper(props);",
-      "\t\tthis.state = { $4: $5 };",
-      "\t}",
-      "\trender() { ",
-      "\t\treturn ( $0 );",
-      "\t}",
-      "}",
-      " ",
-      "export default $1;"
-    ],
-    "description": "Class Component with Constructor"
+  "Console Log": {
+    "prefix": "clg",
+    "body": ["console.log($1);"],
+    "description": "Console Log"
+  },
+
+  "Console Log Object": {
+    "prefix": "clo",
+    "body": ["console.log('$1', $1);"],
+    "description": "Console Log Object"
+  },
+
+  "Named function": {
+    "prefix": "nfn",
+    "body": ["const $1 = ($2) => {", "\t$3", "}"],
+    "description": "Named function"
+  },
+
+  "Async Named function": {
+    "prefix": "anfn",
+    "body": ["const $1 = async ($2) => {", "\t$3", "}"],
+    "description": "Async Named function"
   },
 
   "Function Component": {
@@ -124,6 +79,7 @@
       "}",
       " ",
       "const $1: FunctionComponent<$1Props> = ($3) => {",
+      "\t$4",
       "\treturn ( $0 );",
       "}",
       " ",
@@ -136,102 +92,68 @@
     "prefix": "ffc",
     "body": [
       "function $1($2) {",
-      "\treturn ( $0 );",
+      "\t",
+      "\t",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t$0",
+      "\t\t</>",
+      "\t);",
       "}",
       "",
       "export default $1;"
     ],
     "description": "Function Syntax Component"
   },
-  
-  "componentDidMount": {
-    "prefix": "cdm",
-    "body": ["componentDidMount() {", "\t$0", "}"],
-    "description": "componentDidMount"
-  },
 
-  "useEffect": {
-    "prefix": "uef",
+  "Next.js Get Server Side Props Typescript": {
+    "prefix": "ssr",
     "body": [
-      "useEffect(() => {",
-      "\t$1",
-      "}, []);"
+      "export const getServerSideProps: GetServerSideProps = async (ctx) => {",
+      "\t",
+      "\t",
+      "\treturn { props: {} };",
+      "}"
     ],
-    "description": "useEffect Hook"
+    "description": "Next.js Get Server Side Props Typescript"
   },
 
-  "componentWillMount": {
-    "prefix": "cwm",
-    "body": ["//WARNING! To be deprecated in React v17. Use componentDidMount instead.", "componentWillMount() {", "\t$0", "}"],
-    "description": "componentWillMount"
+  "Next.js Get Static Props Typescript": {
+    "prefix": "ssg",
+    "body": [
+      "export const getStaticProps: GetStaticProps = async (ctx) => {",
+      "\t",
+      "\t",
+      "\treturn { props: {} };",
+      "}"
+    ],
+    "description": "Next.js Get Static Props Typescript"
   },
 
-  "componentWillReceiveProps": {
-    "prefix": "cwrp",
-    "body": ["//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.", "componentWillReceiveProps(nextProps: $1Props) {", "\t$0", "}"],
-    "description": "componentWillReceiveProps"
+  "Button onClick": {
+    "prefix": "boc",
+    "body": ["<button onClick={$2}>$1</button>\n"],
+    "description": "Button onClick"
   },
 
   "getDerivedStateFromProps": {
     "prefix": "gds",
-    "body": ["static getDerivedStateFromProps(nextProps: $1Props, prevState: $1State) {", "\t$0", "}"],
+    "body": [
+      "static getDerivedStateFromProps(nextProps: $1Props, prevState: $1State) {",
+      "\t$0",
+      "}"
+    ],
     "description": "getDerivedStateFromProps"
-  },
-
-  "shouldComponentUpdate": {
-    "prefix": "scu",
-    "body": ["shouldComponentUpdate(nextProps: $1Props, nextState: $1State) {", "\t$0", "}"],
-    "description": "shouldComponentUpdate"
-  },
-
-  "componentWillUpdate": {
-    "prefix": "cwu",
-    "body": ["//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.", "componentWillUpdate(nextProps: $1Props, nextState: $1State) {", "\t$0", "}"],
-    "description": "componentWillUpdate"
-  },
-
-  "componentDidUpdate": {
-    "prefix": "cdu",
-    "body": ["componentDidUpdate(prevProps: $1Props, prevState: $1State) {", "\t$0", "}"],
-    "description": "componentDidUpdate"
-  },
-
-  "componentWillUnmount": {
-    "prefix": "cwun",
-    "body": ["componentWillUnmount() {", "\t$0", "}"],
-    "description": "componentWillUnmount"
-  },
-
-  "componentDidCatch": {
-    "prefix": "cdc",
-    "body": ["componentDidCatch(error, info) {", "\t$0", "}"],
-    "description": "componentDidCatch"
   },
 
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
-    "body": ["getSnapshotBeforeUpdate(prevProps: $1Props, prevState: $1State) {", "\t$0", "}"],
-    "description": "getSnapshotBeforeUpdate"
-  },
-
-  "setState": {
-    "prefix": "ss",
-    "body": ["this.setState({ $1: $2 });"],
-    "description": "setState"
-  },
-
-  "Functional setState": {
-    "prefix": "ssf",
-    "body": ["this.setState(prevState => {", "\treturn { $1: prevState.$1 };", "});"],
-    "description": "Functional setState"
-  },
-
-  "Declare a new state variable using State Hook": {
-    "prefix": "usf",
     "body": [
-      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"
+      "getSnapshotBeforeUpdate(prevProps: $1Props, prevState: $1State) {",
+      "\t$0",
+      "}"
     ],
-    "description": "Declare a new state Variable using the State Hook. Hit Tab to apply CamelCase to function"
+    "description": "getSnapshotBeforeUpdate"
   },
 
   "render": {

@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.5
+
+- typescript update
+
 ## 1.2.4
 
 - `fc` now listed as `ffc`
