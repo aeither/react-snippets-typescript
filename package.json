@@ -1,13 +1,13 @@
 {
-  "name": "react-snippets-typescript",
+  "name": "simple-react-snippets",
   "displayName": "Simple React Snippets for Typescript",
   "description": "Dead simple React snippets you will actually use",
   "version": "1.2.6",
-  "publisher": "aeither",
+  "publisher": "fulin",
   "icon": "images/react-logo.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aeither/react-snippets-typescript.git"
+    "url": "https://github.com/aeither/simple-react-snippets.git"
   },
   "keywords": [
     "React",
