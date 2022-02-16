@@ -24,7 +24,7 @@ that work the way that you would expect, not just a copy of the documentation.
 | `imem`  | Import External Module                        |
 | `imrd`  | Import ReactDOM                               |
 | `ims`   | Import useState                               |
-| `imrse` | Import useState useEffect                     |
+| `imse`  | Import useState useEffect                     |
 | `impt`  | Import PropTypes                              |
 | `use`   | useEffect Hook                                |
 | `uss`   | Declare a new state variable using State Hook |
@@ -32,7 +32,7 @@ that work the way that you would expect, not just a copy of the documentation.
 | `clg`   | Console Log                                   |
 | `clo`   | Console Log Object                            |
 | `nfn`   | Named function                                |
-| `anfn`  | Async Named function                         |
+| `anfn`  | Async Named function                          |
 | `fc`    | Function Component                            |
 | `ffc`   | Function Syntax Component                     |
 | `gds`   | getDerivedStateFromProps                      |
@@ -42,6 +42,8 @@ that work the way that you would expect, not just a copy of the documentation.
 | `hoc`   | Higher Order Component                        |
 | `cp`    | Context Provider                              |
 | `cpf`   | Class Property Function                       |
+
+- Full expansions is not completed. Check `snippets/snippets-ts.json` for all the updated snippets.
 
 ## Full Expansions
 
@@ -64,17 +66,15 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 ```
 
-### imrs - Import React, useState
+### ims - Import useState
 
 ```javascript
-import * as React from "react";
 import { useState } from "react";
 ```
 
-### imrse - Import React, useState, useEffect
+### imse - Import useState, useEffect
 
 ```javascript
-import * as React from "react";
 import { useState, useEffect } from "react";
 ```
 
@@ -82,54 +82,6 @@ import { useState, useEffect } from "react";
 
 ```javascript
 import PropTypes from "prop-types";
-```
-
-### impc - Import PureComponent
-
-```javascript
-import * as React from "react";
-import { PureComponent } from "react";
-```
-
-### cc - Class Component
-
-```javascript
-class | extends React.Component {
-  render() {
-    return <div>|</div>
-  }
-}
-
-export default |;
-```
-
-### ccc - Class Component With Constructor
-
-```javascript
-class | extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { | };
-  }
-  render() {
-    return ( | );
-  }
-}
-
-export default |;
-```
-
-### cpc - Class Pure Component
-
-```javascript
-class | extends PureComponent {
-  state = { | },
-  render() {
-    return ( | );
-  }
-}
-
-export default |;
 ```
 
 ### ffc - Function Component
@@ -152,15 +104,7 @@ const | = props => {
 export default |;
 ```
 
-### cdm - componentDidMount
-
-```javascript
-componentDidMount() {
-  |
-}
-```
-
-### uef - useEffect Hook
+### use - useEffect Hook
 
 ```javascript
 useEffect(() => {
@@ -168,69 +112,10 @@ useEffect(() => {
 }, []);
 ```
 
-### cwm - componentWillMount
-
-```javascript
-//WARNING! To be deprecated in React v17. Use componentDidMount instead.
-componentWillMount() {
-  |
-}
-```
-
-### cwrp - componentWillReceiveProps
-
-```javascript
-//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
-componentWillReceiveProps(nextProps) {
-  |
-}
-```
-
 ### gds - getDerivedStateFromProps
 
 ```javascript
 static getDerivedStateFromProps(nextProps, prevState) {
-  |
-}
-```
-
-### scu - shouldComponentUpdate
-
-```javascript
-shouldComponentUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cwu - componentWillUpdate
-
-```javascript
-//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-componentWillUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cdu - componentDidUpdate
-
-```javascript
-componentDidUpdate(prevProps, prevState) {
-  |
-}
-```
-
-### cwun - componentWillUnmount
-
-```javascript
-componentWillUnmount() {
-  |
-}
-```
-
-### cdc - componentDidCatch
-
-```javascript
-componentDidCatch(error, info) {
   |
 }
 ```
@@ -243,21 +128,7 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 }
 ```
 
-### ss - setState
-
-```javascript
-this.setState({ | : | });
-```
-
-### ssf - Functional setState
-
-```javascript
-this.setState(prevState => {
-  return { | : prevState.| }
-});
-```
-
-### usf - Declare a new state variable using State Hook
+### uss - Declare a new state variable using State Hook
 
 ```javascript
 const [|, set|] = useState();
