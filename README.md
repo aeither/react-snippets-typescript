@@ -1,6 +1,7 @@
 # Simple React Snippets for Typescript
 
-- Simple React Snippets Extension customized to my daily uses.
+- Simple React Snippets Extension by burkeholland customized to my own daily uses. (removed classes, add hooks, console log, named functions...)
+- Install https://marketplace.visualstudio.com/items?itemName=fulin.react-snippets-typescript
 
 The essential collection of React Snippets and commands.
 
